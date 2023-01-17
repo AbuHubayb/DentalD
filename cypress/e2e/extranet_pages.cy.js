@@ -1,4 +1,4 @@
-describe('Navigation', () => {
+describe('NAVIGATION', () => {
   Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   })
@@ -12,7 +12,7 @@ describe('Navigation', () => {
 })
 
 
-describe('Affiliate Program Overview Page', () => {
+describe('OVERVIEW PAGE', () => {
   beforeEach('', () => {
     cy.visit('/affiliates')
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -21,7 +21,10 @@ describe('Affiliate Program Overview Page', () => {
   })
 
   it('Page Responsiveness', () => {
-
+    cy.Lanscape()
+  })
+  it('Page Responsiveness', () => {
+    cy.Portrait()
   })
 
   // Header Items
@@ -39,7 +42,7 @@ describe('Affiliate Program Overview Page', () => {
   it('Pricing Button', () => {
     cy.get(':nth-child(3) > .nav-link').click({ force: true })
     cy.url()
-      .should('include', Cypress.config().baseUrl +'/pricing')
+      .should('include', Cypress.config().baseUrl + '/pricing')
     cy.get('.text-dark')
       .should('be.visible')
       .and('contain', 'deliver')
@@ -53,7 +56,7 @@ describe('Affiliate Program Overview Page', () => {
     cy.get('app-affiliate-signup > .h1').should('contain', 'Sign up')
   })
 
-  it('Become an Affiliate Button', () => {
+  it('Get Started Button', () => {
     cy.get(':nth-child(3) > .btn').click({ force: true })
     cy.url('eq', Cypress.config().baseUrl + '/affiliates/signup')
     cy.get('app-affiliate-signup > .h1').should('contain', 'Sign up')
@@ -97,7 +100,7 @@ describe('Affiliate Program Overview Page', () => {
     cy.get('h2')
       .should('be.visible')
       .and('contain', 'Win')
-  }) 
+  })
   it('FAQs', () => {
     cy.get('.col-md-2 > .p-0 > :nth-child(2) > .text-decoration-none > .marg_left').click()
     cy.url().should('eq', Cypress.config().baseUrl + '/faq')
@@ -118,6 +121,58 @@ describe('Affiliate Program Overview Page', () => {
   it('Copyright Year and Link', () => {
     cy.get('.copyright')
       .should('contain', '2023')
+  })
+})
+
+
+
+
+describe.only('SIGN-IN PAGE', () => {
+  beforeEach('', () => {
+    cy.visit('/affiliates/signup')
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      return false
+    })
+  })
+
+  it('Page Responsiveness', () => {
+    cy.Landscape()
+  })
+  it('Page Responsiveness', () => {
+    cy.Portrait()
+  })
+  it('Compulsory Fields', () => {
+    cy.get('.mb-3.ng-untouched > .mb-3 > .btn').click()
+    cy.get('#number > app-field-error > .field-error')
+      .should('be.visible')
+      .and('contain', 'cannot be blank')
+    cy.get('#office-email > app-field-error > .field-error')
+      .should('be.visible')
+      .and('contain', 'cannot be blank')
+    cy.get('#office-email > app-field-error > .field-error')
+      .should('be.visible')
+      .and('contain', 'cannot be blank')
+    cy.get('#last-name > app-field-error > .field-error')
+      .should('be.visible')
+      .and('contain', 'cannot be blank')
+    cy.get('#first-name > app-field-error > .field-error')
+      .should('be.visible')
+      .and('contain', 'cannot be blank')
+  })
+  it('Navigate to Sign-In', () => {
+    cy.get('.mb-3.ng-untouched > .mb-3 > p > .link').click()
+    cy.contains('Forgot Password')
+    cy.contains('Remember me')
+  })
+  it.only('Sign-Up', () => {
+    const uuid = () => Cypress._.random(0, 1e6)
+    const id = uuid()
+    const testname = `testname${id}`
+    cy.get('#first-name-input').type(testname)
+    cy.get('#last-name-input').type(testname)
+    cy.get('#office-email-input').type(testname)
+    cy.get('#phone').type()
+    cy.get('.mb-3.ng-untouched > .mb-3 > .btn').click()
   })
 })
 
