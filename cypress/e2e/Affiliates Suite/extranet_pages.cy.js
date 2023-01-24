@@ -8,22 +8,28 @@ describe('NAVIGATION', () => {
   })
   it('Navigate with link', () => {
     cy.visit('/affiliates')
+    it('Page Responsiveness Landscape', () => {
+      cy.Landscape()
+    })
+    it('Page Responsiveness Portrait', () => {
+      cy.Portrait()
+    })
   })
 })
 
 
 describe('OVERVIEW PAGE', () => {
   beforeEach('', () => {
-    cy.visit('/affiliates')
+    cy.visit('/affiliates/')
     Cypress.on('uncaught:exception', (err, runnable) => {
       return false
     })
   })
 
-  it('Page Responsiveness', () => {
-    cy.Lanscape()
+  it('Page Responsiveness Landscape', () => {
+    cy.Landscape()
   })
-  it('Page Responsiveness', () => {
+  it('Page Responsiveness Portrait', () => {
     cy.Portrait()
   })
 
@@ -127,7 +133,7 @@ describe('OVERVIEW PAGE', () => {
 
 
 
-describe.only('SIGN-IN PAGE', () => {
+describe.only('SIGN-UP PAGE', () => {
   beforeEach('', () => {
     cy.visit('/affiliates/signup')
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -135,10 +141,10 @@ describe.only('SIGN-IN PAGE', () => {
     })
   })
 
-  it('Page Responsiveness', () => {
+  it.only('Page Responsiveness', () => {
     cy.Landscape()
   })
-  it('Page Responsiveness', () => {
+  it.only('Page Responsiveness', () => {
     cy.Portrait()
   })
   it('Compulsory Fields', () => {
@@ -164,15 +170,23 @@ describe.only('SIGN-IN PAGE', () => {
     cy.contains('Forgot Password')
     cy.contains('Remember me')
   })
-  it.only('Sign-Up', () => {
+  it('Sign-Up', () => {
     const uuid = () => Cypress._.random(0, 1e6)
     const id = uuid()
     const testname = `testname${id}`
     cy.get('#first-name-input').type(testname)
     cy.get('#last-name-input').type(testname)
-    cy.get('#office-email-input').type(testname)
-    cy.get('#phone').type()
-    cy.get('.mb-3.ng-untouched > .mb-3 > .btn').click()
+    cy.get('#office-email-input').type(testname + '@gmail.com')
+    cy.get('#phone').type('+15486978542')
+    // cy.get('.mb-3.ng-invalid > .mb-3 > .btn').click({force: true})
+    cy.get('.mb-3.ng-dirty > .mb-3 > .btn').click({ force: true })
+    cy.get('#invite-code-input').type('DDAP009')
+    cy.get('#password-input').type('P@ssw0rd!')
+    cy.get('#confirm-password-input').type('P@ssw0rd!')
+    cy.get('#flexCheckDefault').check()
+    cy.intercept('POST', 'https://ddstaging.byteproducts.com/api/resource/verify?identifier=%2B4562689562&type=mobile_number', 'Success').as('new-user')
+    cy.contains('OTP').click()
+    // cy.get('.flex-column > .btn').click()
   })
 })
 
