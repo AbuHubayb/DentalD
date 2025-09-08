@@ -103,20 +103,17 @@ With this setup, the **DentalMat Test Automation Project** ensures functionality
 
 👉 Do you want me to **include the Cypress installation & run instructions** (so someone cloning your repo knows exactly how to set it up from scratch)?
 
-1. Script for Allure installation:
---------------------------------------------------------------------
+1. Script for Allure installation command line. This should add Allure to the package.json file:
 npm install --save-dev mocha-allure-reporter allure-commandline
---------------------------------------------------------------------
---------------------------------------------------------------------
 
-3. Script for test execution (chrome):
---------------------------------------------------------------------
+2. Script for test execution (Chrome). This should be added to the script object in the package.json file. It contains the exact spec we want to run the report for:
 "browser:chrome": "npx cypress run --browser=chrome --headed --spec cypress/e2e/Affiliates_Suite/extranet_pages.cy.js --reporter mocha-allure-reporter",
---------------------------------------------------------------------
---------------------------------------------------------------------
 
-5. Allure report generate script:
---------------------------------------------------------------------
+3. Script for test execution (Chrome). This should also be added to the script object in the package.json file. 
 "report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report"
---------------------------------------------------------------------
---------------------------------------------------------------------
+
+4. Run 'npm run browser:chrome' in the command line. This should add the allure report folder to the test structure
+
+5. run 'npm run allure:report' in the command line. This would generate the report in another browser.
+
+
