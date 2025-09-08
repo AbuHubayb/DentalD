@@ -125,15 +125,17 @@ describe('OVERVIEW PAGE', () => {
       .should('contain', 'Specialty Office')
   })
   it('Copyright Year and Link', () => {
-    cy.get('.copyright')
-      .should('contain', '2023')
-  })
+  const currentYear = new Date().getFullYear();
+
+  cy.get('.copyright')
+    .should('contain', currentYear);
+});
 })
 
 
 
 
-describe.only('SIGN-UP PAGE', () => {
+describe('SIGN-UP PAGE', () => {
   beforeEach('', () => {
     cy.visit('/affiliates/signup')
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -141,10 +143,10 @@ describe.only('SIGN-UP PAGE', () => {
     })
   })
 
-  it.only('Page Responsiveness', () => {
+  it('Page Responsiveness', () => {
     cy.Landscape()
   })
-  it.only('Page Responsiveness', () => {
+  it('Page Responsiveness', () => {
     cy.Portrait()
   })
   it('Compulsory Fields', () => {
