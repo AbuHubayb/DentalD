@@ -1,0 +1,152 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1757347570776' stop='1757347696934'>
+    <name>OVERVIEW PAGE</name>
+    <title>OVERVIEW PAGE</title>
+    <test-cases>
+        <test-case start='1757347570781' status='passed' stop='1757347605344'>
+            <name>Page Responsiveness Landscape</name>
+            <title>Page Responsiveness Landscape</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347605370' status='passed' stop='1757347658447'>
+            <name>Page Responsiveness Portrait</name>
+            <title>Page Responsiveness Portrait</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347658470' status='failed' stop='1757347664389'>
+            <name>Home Button</name>
+            <title>Home Button</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 4000ms: expected '&lt;img.img-fluid.header-nurse>' to be 'visible'
+                
+                This element `&lt;img.img-fluid.header-nurse>` is not visible because it has an effective width and height of: `0 x 0` pixels.</message>
+                <stack-trace>AssertionError: Timed out retrying after 4000ms: expected '&lt;img.img-fluid.header-nurse>' to be 'visible'
+                
+                This element `&lt;img.img-fluid.header-nurse>` is not visible because it has an effective width and height of: `0 x 0` pixels.
+                    at Context.eval (webpack://denatld/./cypress/e2e/Affiliates_Suite/extranet_pages.cy.js:40:46)</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1757347664501' status='passed' stop='1757347669636'>
+            <name>About Button</name>
+            <title>About Button</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347669688' status='passed' stop='1757347671774'>
+            <name>Pricing Button</name>
+            <title>Pricing Button</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347671809' status='passed' stop='1757347674075'>
+            <name>Become an Affiliate Button</name>
+            <title>Become an Affiliate Button</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347674111' status='passed' stop='1757347675695'>
+            <name>Get Started Button</name>
+            <title>Get Started Button</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347675718' status='passed' stop='1757347677454'>
+            <name>FAQ</name>
+            <title>FAQ</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347677496' status='passed' stop='1757347678962'>
+            <name>Facebook</name>
+            <title>Facebook</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347678984' status='passed' stop='1757347680366'>
+            <name>Twitter</name>
+            <title>Twitter</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347680394' status='passed' stop='1757347682969'>
+            <name>Terms of Use</name>
+            <title>Terms of Use</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347682999' status='passed' stop='1757347685680'>
+            <name>Privacy</name>
+            <title>Privacy</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347685697' status='passed' stop='1757347689415'>
+            <name>About Us</name>
+            <title>About Us</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347689462' status='passed' stop='1757347691899'>
+            <name>FAQs</name>
+            <title>FAQs</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347691932' status='passed' stop='1757347693788'>
+            <name>Dental Professional</name>
+            <title>Dental Professional</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347693839' status='passed' stop='1757347695592'>
+            <name>Dental Office</name>
+            <title>Dental Office</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347695633' status='passed' stop='1757347696919'>
+            <name>Copyright Year and Link</name>
+            <title>Copyright Year and Link</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

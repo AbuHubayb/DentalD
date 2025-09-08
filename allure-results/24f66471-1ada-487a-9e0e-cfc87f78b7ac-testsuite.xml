@@ -1,0 +1,52 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1757347696940' stop='1757347796946'>
+    <name>SIGN-UP PAGE</name>
+    <title>SIGN-UP PAGE</title>
+    <test-cases>
+        <test-case start='1757347696945' status='passed' stop='1757347730756'>
+            <name>Page Responsiveness</name>
+            <title>Page Responsiveness</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347730780' status='passed' stop='1757347782699'>
+            <name>Page Responsiveness</name>
+            <title>Page Responsiveness</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347782724' status='passed' stop='1757347784605'>
+            <name>Compulsory Fields</name>
+            <title>Compulsory Fields</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347784636' status='passed' stop='1757347788501'>
+            <name>Navigate to Sign-In</name>
+            <title>Navigate to Sign-In</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1757347788531' status='failed' stop='1757347796945'>
+            <name>Sign-Up</name>
+            <title>Sign-Up</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Timed out retrying after 4000ms: Expected to find content: 'OTP' but never did.</message>
+                <stack-trace>AssertionError: Timed out retrying after 4000ms: Expected to find content: 'OTP' but never did.
+                    at Context.eval (webpack://denatld/./cypress/e2e/Affiliates_Suite/extranet_pages.cy.js:190:7)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

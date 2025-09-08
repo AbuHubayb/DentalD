@@ -1,1 +1,34 @@
-node_modules
+# Node dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Cypress outputs
+cypress/videos/
+cypress/screenshots/
+
+# Allure results & reports
+allure-results/
+allure-report/
+
+# Coverage reports
+coverage/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE/project settings
+.vscode/
+.idea/
+*.iml

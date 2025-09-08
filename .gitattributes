@@ -1,0 +1,28 @@
+# Enforce LF line endings for consistency
+* text=auto eol=lf
+
+# Common text files
+*.js     text eol=lf
+*.ts     text eol=lf
+*.json   text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.css    text eol=lf
+*.scss   text eol=lf
+*.html   text eol=lf
+*.md     text eol=lf
+
+# Mark binary files (no diff/merge)
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.mp4    binary
+*.mov    binary
+*.zip    binary
+
+# Cypress videos & screenshots
+cypress/videos/* binary
+cypress/screenshots/* binary
