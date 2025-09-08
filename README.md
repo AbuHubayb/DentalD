@@ -99,21 +99,126 @@ With this setup, the **DentalMat Test Automation Project** ensures functionality
 ![Allure Report](https://img.shields.io/badge/Reporting-Allure-FF4E4E?logo=allure&logoColor=white)
 ```
 
+
 ---
 
-👉 Do you want me to **include the Cypress installation & run instructions** (so someone cloning your repo knows exactly how to set it up from scratch)?
+## ⚙️ Allure Setup and Test Execution
 
-1. Script for Allure installation command line. This should add Allure to the package.json file:
+Before using Allure, make sure you have **[Cypress installed](https://docs.cypress.io/guides/getting-started/installing-cypress)** and tests running successfully.
+
+---
+
+### 🔹 1. Install Allure Reporter
+
+Run the following command to install the Allure reporter and add it to your `package.json`:
+
+```bash
 npm install --save-dev mocha-allure-reporter allure-commandline
+```
 
-2. Script for test execution (Chrome). This should be added to the script object in the package.json file. It contains the exact spec we want to run the report for:
-"browser:chrome": "npx cypress run --browser=chrome --headed --spec cypress/e2e/Affiliates_Suite/extranet_pages.cy.js --reporter mocha-allure-reporter",
+---
 
-3. Script for test execution (Chrome). This should also be added to the script object in the package.json file. 
-"report:allure": "allure generate allure-results --clean -o allure-report && allure open  allure-report"
+### 🔹 2. Add Scripts to `package.json`
 
-4. Run 'npm run browser:chrome' in the command line. This should add the allure report folder to the test structure
+Inside the `scripts` section of your `package.json`, add the following:
 
-5. run 'npm run allure:report' in the command line. This would generate the report in another browser.
+```json
+"scripts": {
+  "browser:chrome": "npx cypress run --browser=chrome --headed --spec cypress/e2e/Affiliates_Suite/extranet_pages.cy.js --reporter mocha-allure-reporter",
+  "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+}
+```
 
+* **`browser:chrome`** → Runs the Cypress test on Chrome (headed mode) for a specific spec file, using the Allure reporter.
+* **`report:allure`** → Generates and opens the Allure report from the test results.
 
+---
+
+### 🔹 3. Running Tests and Reports
+
+Run the following commands from the terminal:
+
+1. **Execute Tests (Chrome):**
+
+   ```bash
+   npm run browser:chrome
+   ```
+
+   This will run your Cypress tests in Chrome and output results into the `allure-results/` folder.
+
+2. **Generate & Open Allure Report:**
+
+   ```bash
+   npm run report:allure
+   ```
+
+   This will generate the Allure report in the `allure-report/` folder and open it in your browser.
+
+---
+
+✅ At the end of this process, you’ll have a **visual Allure report** showing test execution results, pass/fail breakdown, and details for each spec.
+
+---
+
+👉 Do you also want me to include a **screenshot embed example** in the README (so recruiters/teammates can see what an Allure report looks like directly on GitHub)?
+Got it ✅ — here’s your section rewritten in **clean GitHub README formatting**, with emphasis, code blocks, and notes that installing and running Cypress is a prerequisite.
+
+---
+
+## ⚙️ Allure Setup and Test Execution
+
+Before using Allure, make sure you have **[Cypress installed](https://docs.cypress.io/guides/getting-started/installing-cypress)** and tests running successfully.
+
+---
+
+### 🔹 1. Install Allure Reporter
+
+Run the following command to install the Allure reporter and add it to your `package.json`:
+
+```bash
+npm install --save-dev mocha-allure-reporter allure-commandline
+```
+
+---
+
+### 🔹 2. Add Scripts to `package.json`
+
+Inside the `scripts` section of your `package.json`, add the following:
+
+```json
+"scripts": {
+  "browser:chrome": "npx cypress run --browser=chrome --headed --spec cypress/e2e/Affiliates_Suite/extranet_pages.cy.js --reporter mocha-allure-reporter",
+  "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report"
+}
+```
+
+* **`browser:chrome`** → Runs the Cypress test on Chrome (headed mode) for a specific spec file, using the Allure reporter.
+* **`report:allure`** → Generates and opens the Allure report from the test results.
+
+---
+
+### 🔹 3. Running Tests and Reports
+
+Run the following commands from the terminal:
+
+1. **Execute Tests (Chrome):**
+
+   ```bash
+   npm run browser:chrome
+   ```
+
+   This will run your Cypress tests in Chrome and output results into the `allure-results/` folder.
+
+2. **Generate & Open Allure Report:**
+
+   ```bash
+   npm run report:allure
+   ```
+
+   This will generate the Allure report in the `allure-report/` folder and open it in your browser.
+
+---
+
+✅ At the end of this process, you’ll have a **visual Allure report** showing test execution results, pass/fail breakdown, and details for each spec.
+
+---
